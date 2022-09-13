@@ -32,3 +32,39 @@ service insmod_sh_slider /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.slid
 on property:sys.retaildemo.enabled=1
     setprop persist.vendor.charge.stop.level 35
     setprop persist.vendor.charge.start.level 30
+  
+echo 1 > /proc/vendor_sched/pmu_poll_enable
+echo N > /sys/module/damon_reclaim/parameters/enabled
+echo 30000000 > /sys/module/damon_reclaim/parameters/min_age
+echo 1000000000 > /sys/module/damon_reclaim/parameters/quota_sz
+echo 1000 > /sys/module/damon_reclaim/parameters/quota_reset_interval_ms
+echo 500 > /sys/module/damon_reclaim/parameters/wmarks_high
+echo 400 > /sys/module/damon_reclaim/parameters/wmarks_mid
+echo 200 > /sys/module/damon_reclaim/parameters/wmarks_low
+echo y > /sys/kernel/mm/lru_gen/enabled
+echo 5000 > /sys/kernel/mm/lru_gen/min_ttl_ms
+
+sleep 60; 
+
+echo 2 > /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/lcpi_threshold
+echo 44 > /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/spc_threshold
+echo 1401000 > /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/limit_frequency
+
+echo 6 > /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/lcpi_threshold
+echo 30 > /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/spc_threshold
+echo 1663000 > /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/limit_frequency
+
+echo 5 > /sys/devices/system/cpu/cpufreq/policy6/sched_pixel/lcpi_threshold
+echo 40 > /sys/devices/system/cpu/cpufreq/policy6/sched_pixel/spc_threshold
+echo 2401000 > /sys/devices/system/cpu/cpufreq/policy6/sched_pixel/limit_frequency
+
+echo 10 > /proc/vendor_sched/pmu_poll_time
+echo 1 > /proc/vendor_sched/pmu_poll_enable
+echo 1 > /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/pmu_limit_enable
+echo 1 > /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/pmu_limit_enable
+echo 1 > /sys/devices/system/cpu/cpufreq/policy6/sched_pixel/pmu_limit_enable
+
+sleep 30; 
+
+echo N > /sys/module/damon_reclaim/parameters/enabled
+echo 1 > /proc/vendor_sched/pmu_poll_enable
