@@ -1,7 +1,7 @@
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2280
-TARGET_SCREEN_WIDTH := 1080
-TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SCREEN_HEIGHT := 3120
+TARGET_SCREEN_WIDTH := 1440
+TARGET_BOOT_ANIMATION_RES := 1440
 
 CUSTOM_BUILD_TYPE := Official
 TARGET_FACE_UNLOCK_SUPPORTED := true
@@ -14,7 +14,7 @@ USE_PIXEL_CHARGER_IMAGES := true
 TARGET_SUPPORTS_CALL_RECORDING := true
 
 # Inherit device configuration
-$(call inherit-product, device/google/raviole/aosp_oriole_64.mk)
+$(call inherit-product, device/google/raviole/aosp_raven_64.mk)
 
 $(call inherit-product-if-exists, vendor/google/pixelparts/pixelparts.mk)
 
@@ -23,12 +23,12 @@ PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.gs101
     
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := oriole
-PRODUCT_MODEL := Pixel 6
+PRODUCT_NAME := zeph_raven
+PRODUCT_MODEL := Pixel 6 Pro
 PRODUCT_BRAND := google
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=oriole \
-    PRIVATE_BUILD_DESC="oriole-user 13 TP1A.220905.004 8927612 release-keys"
+    PRODUCT_NAME=raven \
+    PRIVATE_BUILD_DESC="raven-user 13 TP1A.220905.004 8927612 release-keys"
 
-BUILD_FINGERPRINT := $(PRODUCT_OVERRIDE_FINGERPRINT)
+BUILD_FINGERPRINT := $(PRODUCT_OVERRIDE_FINGEPRINT)

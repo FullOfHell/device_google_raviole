@@ -34,13 +34,13 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_whitefin_hwasan.mk \
     $(LOCAL_DIR)/aosp_whitefin_64.mk \
     $(LOCAL_DIR)/factory_whitefin.mk \
-    $(LOCAL_DIR)/oriole.mk \
-    $(LOCAL_DIR)/raven.mk
+    $(LOCAL_DIR)/zeph_oriole.mk \
+    $(LOCAL_DIR)/zeph_raven.mk
 
 COMMON_LUNCH_CHOICES := \
     aosp_slider-userdebug \
     aosp_whitefin-userdebug \
     aosp_oriole-userdebug \
     aosp_raven-userdebug \
-    oriole-userdebug \
-    raven-userdebug
+    zeph_oriole-userdebug \
+    zeph_raven-userdebug
