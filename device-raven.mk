@@ -27,6 +27,7 @@ $(call inherit-product-if-exists, vendor/google_devices/raviole/proprietary/Wall
 
 GOODIX_CONFIG_BUILD_VERSION := g6_trusty
 DEVICE_PACKAGE_OVERLAYS += device/google/raviole/raven/overlay
+DEVICE_PACKAGE_OVERLAYS += device/google/raviole/overlay-ancient
 
 include device/google/raviole/audio/raven/audio-tables.mk
 include device/google/gs101/device-shipping-common.mk

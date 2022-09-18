@@ -3,14 +3,20 @@ TARGET_SCREEN_HEIGHT := 3120
 TARGET_SCREEN_WIDTH := 1440
 TARGET_BOOT_ANIMATION_RES := 1440
 
-CUSTOM_BUILD_TYPE := Official
+$(call inherit-product, vendor/ancient/config/common_full_phone.mk)
+
+# Official-ify
+ANCIENT_OFFICIAL=true
+
 TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_USES_BLUR := true
-WITH_GMS := true
+
+ANCIENT_GAPPS := true
+TARGET_INCLUDE_PIXEL_CHARGER := true
+PIXEL_STUFF := true
+TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
-USE_PIXEL_CHARGER_IMAGES := true
 TARGET_SUPPORTS_CALL_RECORDING := true
 
 # Inherit device configuration
@@ -23,7 +29,7 @@ PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.gs101
     
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := zeph_raven
+PRODUCT_NAME := ancient_raven
 PRODUCT_MODEL := Pixel 6 Pro
 PRODUCT_BRAND := google
 
