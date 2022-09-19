@@ -18,6 +18,10 @@ TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_SUPPORTS_CALL_RECORDING := true
+FORCE_NEXUSLAUNCHER := true
+
+# Properties
+TARGET_SYSTEM_PROP := device/google/raviole/system.prop
 
 # Inherit device configuration
 $(call inherit-product, device/google/raviole/aosp_raven_64.mk)
