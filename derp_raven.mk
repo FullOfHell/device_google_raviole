@@ -20,6 +20,9 @@ $(call inherit-product-if-exists, vendor/google/pixelparts/pixelparts.mk)
 # Extra packages
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.gs101
+
+# Properties
+TARGET_SYSTEM_PROP := device/google/raviole/system.prop
     
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := derp_raven
