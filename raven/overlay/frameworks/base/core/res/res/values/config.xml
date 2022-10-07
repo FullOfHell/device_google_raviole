@@ -294,6 +294,6 @@
 
 
     <!-- Fingerprint from stock ROM -->
-    <string name="config_stockFingerprint" translatable="false">google/raven/raven:13/TP1A.220905.004/8927612:user/release-keys</string>
+<string name="config_stockFingerprint" translatable="false">google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys</string>
         
 </resources>
